@@ -33,4 +33,7 @@ public class Calculator {
         return sub;
     }
 
+    public double division(double... numbers) {
+        return 0;
+    }
 }
