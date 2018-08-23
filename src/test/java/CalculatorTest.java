@@ -85,7 +85,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         try {
-            calculator.division(100,10,2,3,0);
+            calculator.division(100,0,2,3,0);
         } catch (Exception e) {
             assertTrue(e instanceof IllegalArgumentException);
         }

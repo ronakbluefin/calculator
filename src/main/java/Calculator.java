@@ -23,7 +23,7 @@ public class Calculator {
     public double subtraction(double... numbers) {
 
         if (numbers.length <= 0)
-            throw new NullPointerException("Substraction:: Values can not be Empty");
+            throw new NullPointerException("Subtraction:: Values can not be Empty");
 
         double sub = 0;
 
@@ -38,16 +38,11 @@ public class Calculator {
         if(numbers.length <=0)
             throw new NullPointerException("Division:: Values can not be Empty");
 
-        double div = 0;
+        double div = numbers[0]*numbers[0];
 
-        for(int i=0; i<numbers.length; i++) {
-            div = numbers[i];
+        for(double number : numbers)
+            div/= number;
 
-            if(numbers.length <= i) {
-                div /= numbers[i+1];
-            } else
-                return div;
-        }
         return div;
     }
 }
