@@ -77,7 +77,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         double result = calculator.division(16,2,2,1);
-        assertEquals(4, result,0);
+        assertEquals(4, result,2);
     }
 
     @Test

@@ -9,7 +9,7 @@ public class Calculator {
     public int addition(int... numbers) {
 
         if(numbers.length <= 0)
-            throw new ArithmeticException("Addition:: Values can not be null");
+            throw new NullPointerException("Addition:: Values can not be Empty");
 
         BigInteger bigIntegerAddition = BigInteger.valueOf(0);
 
@@ -23,7 +23,7 @@ public class Calculator {
     public double subtraction(double... numbers) {
 
         if (numbers.length <= 0)
-            throw new ArithmeticException("Substraction:: Values can not be null");
+            throw new NullPointerException("Substraction:: Values can not be Empty");
 
         double sub = 0;
 
@@ -36,8 +36,18 @@ public class Calculator {
     public double division(double... numbers) {
 
         if(numbers.length <=0)
-            throw new ArithmeticException("Division:: Values can not be null");
+            throw new NullPointerException("Division:: Values can not be Empty");
 
-        return 0;
+        double div = 0;
+
+        for(int i=0; i<numbers.length; i++) {
+            div = numbers[i];
+
+            if(numbers.length <= i) {
+                div /= numbers[i+1];
+            } else
+                return div;
+        }
+        return div;
     }
 }
