@@ -31,13 +31,13 @@ public class CalculatorTest {
     }
 
     @Test
-    public void additionOutOfRange() {
+    public void additionArithmeticException() {
         calculator = new Calculator();
 
         try {
             calculator.addition(Integer.MAX_VALUE, 1);
         } catch (Exception e) {
-            assertTrue(e instanceof IndexOutOfBoundsException);
+            assertTrue(e instanceof ArithmeticException);
         }
     }
 
@@ -61,13 +61,44 @@ public class CalculatorTest {
     }
 
     @Test
-    public void substractionOutOfRange() {
+    public void substractionArithmeticException() {
         calculator = new Calculator();
 
         try {
             calculator.subtraction(Double.MIN_VALUE,1);
         } catch (Exception e) {
-            assertTrue(e instanceof IndexOutOfBoundsException);
+            assertTrue(e instanceof ArithmeticException);
+        }
+    }
+
+
+    @Test
+    public void divisionOfNumbers() {
+        calculator = new Calculator();
+
+        double result = calculator.division(16,2,2,1);
+        assertEquals(4, result,0);
+    }
+
+    @Test
+    public void divisionByZero() {
+        calculator = new Calculator();
+
+        try {
+            calculator.division(100,10,2,3,0);
+        } catch (Exception e) {
+            assertTrue(e instanceof IllegalArgumentException);
+        }
+    }
+
+    @Test
+    public void divisionArithmeticException() {
+        calculator = new Calculator();
+
+        try {
+            calculator.division(1000000000, 2);
+        } catch (Exception e) {
+            assertTrue(e instanceof ArithmeticException);
         }
     }
 }
