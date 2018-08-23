@@ -17,4 +17,14 @@ class CalculatorTest {
         assertEquals(-12, result);
     }
 
+    @Test
+    public void additionOutOfRange() {
+        calculator = new Calculator();
+
+        try {
+            calculator.addition(Integer.MAX_VALUE, 1);
+        } catch (Exception e) {
+            assertTrue(e instanceof IndexOutOfBoundsException);
+        }
+    }
 }
