@@ -91,4 +91,8 @@ public class Calculator {
 
         return sum/(numbers.length+1);
     }
+
+    public double findMedianOfNumber(double... numbers) {\
+        return 0;
+    }
 }
