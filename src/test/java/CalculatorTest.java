@@ -139,7 +139,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         try {
-            calculator.multiplication(1000000000, 2);
+            calculator.multiplication(Double.MAX_VALUE, 2);
         } catch (Exception e) {
             assertTrue(e instanceof ArithmeticException);
         }
