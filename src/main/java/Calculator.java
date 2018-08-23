@@ -58,4 +58,11 @@ public class Calculator {
 
         return mul;
     }
+
+    public double[] squareRootOfNumbers(double... numbers) {
+
+
+
+        return null;
+    }
 }
