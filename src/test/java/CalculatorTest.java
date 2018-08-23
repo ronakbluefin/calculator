@@ -187,5 +187,14 @@ public class CalculatorTest {
         assertEquals(16, result, 2);
     }
 
-  
+    @Test
+    public void powerToAnExponentZeroValues() {
+        calculator = new Calculator();
+
+        try {
+            calculator.powerToAnExponent(0,1);
+        } catch (Exception e) {
+            assertTrue(e instanceof IllegalArgumentException);
+        }
+    }
 }
