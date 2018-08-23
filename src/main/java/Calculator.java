@@ -80,7 +80,7 @@ public class Calculator {
         return Math.pow(number, exponent);
     }
 
-    public double findMeanOfNumbers(double... number) {
+    public double findMeanOfNumbers(double... numbers) {
         return 0;
     }
 }

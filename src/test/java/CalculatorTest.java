@@ -207,5 +207,14 @@ public class CalculatorTest {
         } catch (Exception e) {
             assertTrue(e instanceof ArithmeticException);
         }
-    }g
+    }
+
+    @Test
+    public void findMeanOfNumbersSimple() {
+
+        calculator = new Calculator();
+
+        double result = calculator.findMeanOfNumbers(10,20,30,40,50,60,67,05,05,786,8546);
+        assertEquals(874.454545455, result, 4);
+    }
 }
