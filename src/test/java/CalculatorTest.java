@@ -17,8 +17,8 @@ public class CalculatorTest {
     public void additionWithIntegers() {
         calculator = new Calculator();
 
-        BigInteger result =  calculator.addition(10,-2,30,-50);
-        assertEquals(BigInteger.valueOf(-12), result);
+        int result =  calculator.addition(10,-2,30,-50);
+        assertEquals(-12, result);
     }
 
     @Test

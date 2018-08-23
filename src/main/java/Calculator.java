@@ -2,19 +2,27 @@ package main.java;
 
 import java.math.BigInteger;
 
+import static java.lang.Math.toIntExact;
+
 public class Calculator {
 
-    public BigInteger addition(int... numbers) {
+    public int addition(int... numbers) {
 
         if(numbers.length <= 0)
             throw new NullPointerException("Values can not be null");
 
-        BigInteger sum = BigInteger.valueOf(0);
+        BigInteger bigIntegerAddition = BigInteger.valueOf(0);
 
         for(int number : numbers)
-            sum = sum.add(BigInteger.valueOf(number));
+            bigIntegerAddition = bigIntegerAddition.add(BigInteger.valueOf(number));
 
-        return sum;
+        int addition = toIntExact(bigIntegerAddition.intValue());
+        return addition;
+    }
+
+    public double subtraction(double... numbers) {
+
+        return 0;
     }
 
 }
