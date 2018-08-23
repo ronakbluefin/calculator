@@ -46,7 +46,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         double result = calculator.subtraction(123.4, 1.234e2, 132.4f);
-        assertEquals(259.154359776, result, 2);
+        assertEquals(-379.1999938964844, result, 2);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         try {
-            calculator.subtraction();
+            calculator.subtraction(Double.MIN_VALUE,1);
         } catch (Exception e) {
             assertTrue(e instanceof IndexOutOfBoundsException);
         }

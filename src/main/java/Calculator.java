@@ -9,7 +9,7 @@ public class Calculator {
     public int addition(int... numbers) {
 
         if(numbers.length <= 0)
-            throw new NullPointerException("Values can not be null");
+            throw new NullPointerException("Addition:: Values can not be null");
 
         BigInteger bigIntegerAddition = BigInteger.valueOf(0);
 
@@ -22,7 +22,15 @@ public class Calculator {
 
     public double subtraction(double... numbers) {
 
-        return 0;
+        if (numbers.length <= 0)
+            throw new NullPointerException("Substraction:: Values can not be null");
+
+        double sub = 0;
+
+        for (double number : numbers)
+            sub -= number;
+
+        return sub;
     }
 
 }
