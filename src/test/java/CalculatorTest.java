@@ -60,4 +60,14 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void substractionOutOfRange() {
+        calculator = new Calculator();
+
+        try {
+            calculator.subtraction();
+        } catch (Exception e) {
+            assertTrue(e instanceof IndexOutOfBoundsException);
+        }
+    }
 }
