@@ -197,4 +197,15 @@ public class CalculatorTest {
             assertTrue(e instanceof IllegalArgumentException);
         }
     }
+
+    @Test
+    public void powerToAnExponentRangeOfDouble() {
+        calculator = new Calculator();
+
+        try {
+            calculator.powerToAnExponent(Double.MAX_VALUE, 2);
+        } catch (Exception e) {
+            assertTrue(e instanceof ArithmeticException);
+        }
+    }
 }
