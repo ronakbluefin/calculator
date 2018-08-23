@@ -3,8 +3,6 @@ package test.java;
 import main.java.Calculator;
 import org.junit.Test;
 
-import java.math.BigInteger;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -43,4 +41,11 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void subtractionWithDoubles() {
+        calculator = new Calculator();
+
+        double result = calculator.subtraction(123.4, 1.234e2, 132.4f);
+        assertEquals(259.154359776, result);
+    }
 }
