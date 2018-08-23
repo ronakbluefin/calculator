@@ -71,4 +71,8 @@ public class Calculator {
 
         return squareRootResult;
     }
+
+    public double powerToAnExponent(double number, int exponent) {
+        return 0;
+    }
 }
