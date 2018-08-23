@@ -194,7 +194,7 @@ public class CalculatorTest {
         try {
             calculator.powerToAnExponent(0,1);
         } catch (Exception e) {
-            assertTrue(e instanceof IllegalArgumentException);
+            assertTrue(e instanceof NullPointerException);
         }
     }
 

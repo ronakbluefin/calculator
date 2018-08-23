@@ -73,6 +73,10 @@ public class Calculator {
     }
 
     public double powerToAnExponent(double number, int exponent) {
-        return 0;
+
+        if(number == 0)
+            throw new NullPointerException("Power of Number:: Values can not be Empty");
+
+        return Math.pow(number, exponent);
     }
 }
