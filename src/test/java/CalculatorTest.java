@@ -179,4 +179,13 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void powerToAnExponentSimple() {
+        calculator = new Calculator();
+
+        double result = calculator.powerToAnExponent(2,4);
+        assertEquals(16, result, 2);
+    }
+
+  
 }
