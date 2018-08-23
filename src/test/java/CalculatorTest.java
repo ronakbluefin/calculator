@@ -166,4 +166,15 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void squareRootRangeOfDouble() {
+        calculator = new Calculator();
+
+        try {
+            calculator.multiplication(Double.MIN_VALUE);
+        } catch (Exception e) {
+            assertTrue(e instanceof ArithmeticException);
+        }
+    }
+
 }
