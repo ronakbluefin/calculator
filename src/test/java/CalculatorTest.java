@@ -144,4 +144,26 @@ public class CalculatorTest {
             assertTrue(e instanceof ArithmeticException);
         }
     }
+
+    @Test
+    public void squareRootOfNumbers() {
+        calculator = new Calculator();
+
+        double[] result = calculator.squareRootOfNumbers(16,4,64,81,121);
+        double[] expectedResult = {4, 2, 8, 9, 11};
+
+        assertEquals(String.valueOf(expectedResult), result, 2);
+    }
+
+    @Test
+    public void squareRootOfZero() {
+        calculator = new Calculator();
+
+        try {
+            calculator.squareRootOfNumbers(100,0,2,3,0);
+        } catch (Exception e) {
+            assertTrue(e instanceof IllegalArgumentException);
+        }
+    }
+
 }
