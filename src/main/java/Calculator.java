@@ -45,4 +45,9 @@ public class Calculator {
 
         return div;
     }
+
+    public double multiplication(double... numbers) {
+
+        return 0;
+    }
 }
