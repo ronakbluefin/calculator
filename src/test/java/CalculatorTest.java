@@ -228,4 +228,15 @@ public class CalculatorTest {
             assertTrue(e instanceof ArithmeticException);
         }
     }
+
+    @Test
+    public void findMeanOfNumbersNullPointerException() {
+        calculator = new Calculator();
+
+        try {
+            calculator.findMeanOfNumbers();
+        } catch (Exception e) {
+            assertTrue(e instanceof NullPointerException);
+        }
+    }
 }
