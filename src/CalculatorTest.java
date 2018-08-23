@@ -9,6 +9,18 @@ class CalculatorTest {
     Calculator calculator;
 
     @Test
+    public void additionWithNull() {
+        calculator = new Calculator();
+
+        try {
+            calculator.addition();
+        } catch (Exception e) {
+            assertTrue(e instanceof NullPointerException);
+        }
+    }
+
+
+    @Test
     public void additionWithIntegers() {
 
         calculator = new Calculator();
@@ -27,4 +39,5 @@ class CalculatorTest {
             assertTrue(e instanceof IndexOutOfBoundsException);
         }
     }
+
 }
