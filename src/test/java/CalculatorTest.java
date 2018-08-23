@@ -46,6 +46,18 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         double result = calculator.subtraction(123.4, 1.234e2, 132.4f);
-        assertEquals(259.154359776, result);
+        assertEquals(259.154359776, result, 2);
     }
+
+    @Test
+    public void substractionWithNull() {
+        calculator = new Calculator();
+
+        try {
+            calculator.subtraction();
+        } catch (Exception e) {
+            assertTrue(e instanceof NullPointerException);
+        }
+    }
+
 }
