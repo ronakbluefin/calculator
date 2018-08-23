@@ -79,4 +79,8 @@ public class Calculator {
 
         return Math.pow(number, exponent);
     }
+
+    public double findMeanOfNumbers(double... number) {
+        return 0;
+    }
 }
