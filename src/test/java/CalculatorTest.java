@@ -238,4 +238,12 @@ public class CalculatorTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    public void findMedianOfNumbers() {
+        calculator = new Calculator();
+
+        double result = calculator.findMedianOfNumber(10,20,30,40,50,60,70,80,90,100);
+        assertEquals(275, result, 4);
+    }
 }
