@@ -101,4 +101,47 @@ public class CalculatorTest {
             assertTrue(e instanceof ArithmeticException);
         }
     }
+
+
+    @Test
+    public void divisionDoubleRange() {
+        calculator = new Calculator();
+
+        try {
+            calculator.division(Double.MIN_VALUE, Double.MAX_VALUE);
+        } catch (Exception e) {
+            assertTrue(e instanceof ArithmeticException);
+        }
+    }
+
+
+    @Test
+    public void multiplicationOfNumbers() {
+        calculator = new Calculator();
+
+        double result = calculator.multiplication(16,2,2,1);
+        assertEquals(4, result,2);
+    }
+
+    @Test
+    public void multiplicationByZero() {
+        calculator = new Calculator();
+
+        try {
+            calculator.multiplication(100,0,2,3,0);
+        } catch (Exception e) {
+            assertTrue(e instanceof IllegalArgumentException);
+        }
+    }
+
+    @Test
+    public void multiplicationArithmeticException() {
+        calculator = new Calculator();
+
+        try {
+            calculator.multiplication(1000000000, 2);
+        } catch (Exception e) {
+            assertTrue(e instanceof ArithmeticException);
+        }
+    }
 }
