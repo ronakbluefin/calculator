@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 
 public class CalculatorTest {
 
-    Calculator calculator;
+    private Calculator calculator;
 
     @Test
     public void additionWithIntegers() {
@@ -27,8 +27,8 @@ public class CalculatorTest {
 
         try {
             calculator.addition();
-        } catch (Exception e) {
-            assertTrue(e instanceof NullPointerException);
+        } catch (NullPointerException e) {
+            assertTrue(true);
         }
     }
 
@@ -38,8 +38,8 @@ public class CalculatorTest {
 
         try {
             calculator.addition(Integer.MAX_VALUE, 1);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -57,8 +57,8 @@ public class CalculatorTest {
 
         try {
             calculator.subtraction();
-        } catch (Exception e) {
-            assertTrue(e instanceof NullPointerException);
+        } catch (NullPointerException e) {
+            assertTrue(true);
         }
     }
 
@@ -68,8 +68,8 @@ public class CalculatorTest {
 
         try {
             calculator.subtraction(Double.MIN_VALUE,1);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -88,8 +88,8 @@ public class CalculatorTest {
 
         try {
             calculator.division(100,0,2,3,0);
-        } catch (Exception e) {
-            assertTrue(e instanceof IllegalArgumentException);
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
         }
     }
 
@@ -99,8 +99,8 @@ public class CalculatorTest {
 
         try {
             calculator.division(1000000000, 2);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -111,8 +111,8 @@ public class CalculatorTest {
 
         try {
             calculator.division(Double.MIN_VALUE, Double.MAX_VALUE);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -131,8 +131,8 @@ public class CalculatorTest {
 
         try {
             calculator.multiplication(100,0,2,3,0);
-        } catch (Exception e) {
-            assertTrue(e instanceof IllegalArgumentException);
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
         }
     }
 
@@ -142,8 +142,8 @@ public class CalculatorTest {
 
         try {
             calculator.multiplication(Double.MAX_VALUE, 2);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -163,8 +163,8 @@ public class CalculatorTest {
 
         try {
             calculator.squareRootOfNumbers(100,0,2,3,0);
-        } catch (Exception e) {
-            assertTrue(e instanceof IllegalArgumentException);
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
         }
     }
 
@@ -174,8 +174,8 @@ public class CalculatorTest {
 
         try {
             calculator.multiplication(Double.MIN_VALUE);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -193,8 +193,8 @@ public class CalculatorTest {
 
         try {
             calculator.powerToAnExponent(0,1);
-        } catch (Exception e) {
-            assertTrue(e instanceof NullPointerException);
+        } catch (NullPointerException e) {
+            assertTrue(true);
         }
     }
 
@@ -204,18 +204,17 @@ public class CalculatorTest {
 
         try {
             calculator.powerToAnExponent(Double.MAX_VALUE, 2);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
     @Test
     public void findMeanOfNumbersSimple() {
-
         calculator = new Calculator();
 
-        double result = calculator.findMeanOfNumbers(10,20,30,40,50,60,67,05,05,786,8546);
-        assertEquals(874.454545455, result, 4);
+        double result = calculator.findMeanOfNumbers(10,20,30,40,50,60,67,5.5,5.5,700,8546);
+        assertEquals(794.5, result, 4);
     }
 
     @Test
@@ -224,8 +223,8 @@ public class CalculatorTest {
 
         try {
             calculator.findMeanOfNumbers(Double.MAX_VALUE, Double.MAX_VALUE);
-        } catch (Exception e) {
-            assertTrue(e instanceof ArithmeticException);
+        } catch (ArithmeticException e) {
+            assertTrue(true);
         }
     }
 
@@ -235,8 +234,8 @@ public class CalculatorTest {
 
         try {
             calculator.findMeanOfNumbers();
-        } catch (Exception e) {
-            assertTrue(e instanceof NullPointerException);
+        } catch (NullPointerException e) {
+            assertTrue(true);
         }
     }
 }

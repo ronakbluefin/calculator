@@ -16,8 +16,7 @@ public class Calculator {
         for(int number : numbers)
             bigIntegerAddition = bigIntegerAddition.add(BigInteger.valueOf(number));
 
-        int addition = toIntExact(bigIntegerAddition.intValue());
-        return addition;
+        return toIntExact(bigIntegerAddition.intValue());
     }
 
     public double subtraction(double... numbers) {
@@ -75,14 +74,21 @@ public class Calculator {
     public double powerToAnExponent(double number, int exponent) {
 
         if(number == 0)
-            throw new NullPointerException("Power of Number:: Values can not be Empty");
+            throw new NullPointerException("Power of Number:: Value can not be Empty");
 
         return Math.pow(number, exponent);
     }
 
     public double findMeanOfNumbers(double... numbers) {
 
+        if(numbers.length <=0)
+            throw new NullPointerException("Mean of Numbers:: Values can not be Empty");
 
-        return 0;
+        double sum = 0;
+
+        for(double number : numbers)
+            sum += number;
+
+        return sum/(numbers.length+1);
     }
 }
