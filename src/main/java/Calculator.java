@@ -48,6 +48,14 @@ public class Calculator {
 
     public double multiplication(double... numbers) {
 
-        return 0;
+        if (numbers.length <= 0)
+            throw new NullPointerException("Subtraction:: Values can not be Empty");
+
+        double mul = 1;
+
+        for (double number : numbers)
+            mul *= number;
+
+        return mul;
     }
 }
