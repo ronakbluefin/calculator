@@ -1,13 +1,18 @@
 package main.java;
 
+import java.math.BigInteger;
+
 public class Calculator {
 
-    public int addition(int... numbers) {
+    public BigInteger addition(int... numbers) {
 
-        int sum = 0;
+        if(numbers.length <= 0)
+            throw new NullPointerException("Values can not be null");
 
-        for(int number: numbers)
-            sum+= number;
+        BigInteger sum = BigInteger.valueOf(0);
+
+        for(int number : numbers)
+            sum = sum.add(BigInteger.valueOf(number));
 
         return sum;
     }

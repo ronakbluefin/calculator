@@ -3,6 +3,8 @@ package test.java;
 import main.java.Calculator;
 import org.junit.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -10,6 +12,14 @@ import static org.junit.Assert.assertTrue;
 public class CalculatorTest {
 
     Calculator calculator;
+
+    @Test
+    public void additionWithIntegers() {
+        calculator = new Calculator();
+
+        BigInteger result =  calculator.addition(10,-2,30,-50);
+        assertEquals(BigInteger.valueOf(-12), result);
+    }
 
     @Test
     public void additionWithNull() {
@@ -20,16 +30,6 @@ public class CalculatorTest {
         } catch (Exception e) {
             assertTrue(e instanceof NullPointerException);
         }
-    }
-
-
-    @Test
-    public void additionWithIntegers() {
-
-        calculator = new Calculator();
-
-        int result = calculator.addition(10,-2,30,-50);
-        assertEquals(-12, result);
     }
 
     @Test
