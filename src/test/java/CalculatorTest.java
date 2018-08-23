@@ -3,6 +3,8 @@ package test.java;
 import main.java.Calculator;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -152,7 +154,7 @@ public class CalculatorTest {
         double[] result = calculator.squareRootOfNumbers(16,4,64,81,121);
         double[] expectedResult = {4, 2, 8, 9, 11};
 
-        assertEquals(String.valueOf(expectedResult), result, 2);
+        assertTrue(Arrays.equals(result, expectedResult));
     }
 
     @Test

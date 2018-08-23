@@ -49,7 +49,7 @@ public class Calculator {
     public double multiplication(double... numbers) {
 
         if (numbers.length <= 0)
-            throw new NullPointerException("Subtraction:: Values can not be Empty");
+            throw new NullPointerException("Multiplication:: Values can not be Empty");
 
         double mul = 1;
 
@@ -61,8 +61,14 @@ public class Calculator {
 
     public double[] squareRootOfNumbers(double... numbers) {
 
+        if (numbers.length<=0)
+            throw new NullPointerException("Multiplication:: Values can not be Empty");
 
+        double[] squareRootResult = new double[numbers.length];
 
-        return null;
+        for(int i = 0; i<numbers.length; i++)
+            squareRootResult[i] = Math.sqrt(numbers[i]);
+
+        return squareRootResult;
     }
 }
