@@ -217,4 +217,15 @@ public class CalculatorTest {
         double result = calculator.findMeanOfNumbers(10,20,30,40,50,60,67,05,05,786,8546);
         assertEquals(874.454545455, result, 4);
     }
+
+    @Test
+    public void findMeanOfNumbersDoubleRange() {
+        calculator = new Calculator();
+
+        try {
+            calculator.findMeanOfNumbers(Double.MAX_VALUE, Double.MAX_VALUE);
+        } catch (Exception e) {
+            assertTrue(e instanceof ArithmeticException);
+        }
+    }
 }
