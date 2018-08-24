@@ -121,7 +121,7 @@ public class CalculatorTest {
 
         try {
             calculator.division(100,0,2,3,0);
-        } catch (IllegalArgumentException e) {
+        } catch (ArithmeticException e) {
             assertTrue(true);
         }
     }
@@ -136,7 +136,6 @@ public class CalculatorTest {
             assertTrue(true);
         }
     }
-
 
     @Test
     public void divisionDoubleRange() {
@@ -154,7 +153,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         double result = calculator.division(Double.MIN_VALUE,2);
-        assertEquals((Double.MIN_VALUE/2), result, 1);
+        assertEquals(0, result, 0);
     }
 
     @Test
@@ -162,7 +161,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         double result = calculator.multiplication(16,2,2,1);
-        assertEquals(64, result,2);
+        assertEquals(64, result,0.4);
     }
 
     @Test
