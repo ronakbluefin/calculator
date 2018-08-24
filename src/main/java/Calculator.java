@@ -1,5 +1,6 @@
 package main.java;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import static java.lang.Math.toIntExact;
@@ -24,12 +25,12 @@ public class Calculator {
         if (numbers.length <= 0)
             throw new NullPointerException("Subtraction:: Values can not be Empty");
 
-        double sub = 0;
+        BigDecimal sub = BigDecimal.valueOf(0);
 
         for (double number : numbers)
-            sub -= number;
+            sub = sub.subtract(BigDecimal.valueOf(number));
 
-        return sub;
+        return sub.doubleValue();
     }
 
     public double division(double... numbers) {

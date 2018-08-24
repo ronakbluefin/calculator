@@ -48,7 +48,7 @@ public class CalculatorTest {
         calculator = new Calculator();
 
         double result = calculator.subtraction(123.4, 1.234e2, 132.4f);
-        assertEquals(-379.1999938964844, result, 2);
+        assertEquals(-379.1, result, 0.9);
     }
 
     @Test
@@ -61,6 +61,23 @@ public class CalculatorTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    public void substractWithMinValues() {
+        calculator = new Calculator();
+
+        double result = calculator.subtraction(Double.MIN_VALUE, Double.MIN_VALUE);
+        assertEquals(-1.0, result, 1);
+    }
+
+    @Test
+    public void substractWithMaxValues() {
+        calculator = new Calculator();
+
+        double  result = calculator.subtraction(Double.MIN_VALUE, Double.MAX_VALUE);
+        assertEquals(-1.7976931348623157E308, result, 0.12);
+    }
+
 
     @Test
     public void substractionArithmeticException() {
