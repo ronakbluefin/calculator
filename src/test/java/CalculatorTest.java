@@ -201,10 +201,8 @@ public class CalculatorTest {
     public void squareRootOfNumbers() {
         calculator = new Calculator();
 
-        double[] result = calculator.squareRootOfNumbers(16,4,64,81,121);
-        double[] expectedResult = {4, 2, 8, 9, 11};
-
-        assertTrue(Arrays.equals(result, expectedResult));
+        double[] result = calculator.squareRootOfNumbers(16);
+        assertEquals(4, result);
     }
 
     @Test

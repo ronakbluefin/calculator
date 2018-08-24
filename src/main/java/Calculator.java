@@ -2,9 +2,11 @@ package main.java;
 
 import sun.reflect.annotation.ExceptionProxy;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import static java.lang.Math.sqrt;
 import static java.lang.Math.toIntExact;
 
 public class Calculator {
@@ -65,17 +67,10 @@ public class Calculator {
         return mul.doubleValue();
     }
 
-    public double[] squareRootOfNumbers(double... numbers) {
+    public double squareRootOfNumbers(double number) {
 
-        if (numbers.length<=0)
-            throw new NullPointerException("Multiplication:: Values can not be Empty");
 
-        double[] squareRootResult = new double[numbers.length];
-
-        for(int i = 0; i<numbers.length; i++)
-            squareRootResult[i] = Math.sqrt(numbers[i]);
-
-        return squareRootResult;
+        return 0;
     }
 
     public double powerToAnExponent(double number, int exponent) {
