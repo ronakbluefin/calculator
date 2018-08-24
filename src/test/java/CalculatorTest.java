@@ -187,6 +187,17 @@ public class CalculatorTest {
     }
 
     @Test
+    public void multiplicationOfMaxDoubleValues() {
+        calculator = new Calculator();
+
+        try {
+            calculator.multiplication(Double.MAX_VALUE, Double.MAX_VALUE);
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
     public void squareRootOfNumbers() {
         calculator = new Calculator();
 

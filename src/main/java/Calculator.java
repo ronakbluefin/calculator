@@ -1,5 +1,7 @@
 package main.java;
 
+import sun.reflect.annotation.ExceptionProxy;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
@@ -51,12 +53,16 @@ public class Calculator {
         if (numbers.length <= 0)
             throw new NullPointerException("Multiplication:: Values can not be Empty");
 
-        double mul = 1;
+        BigDecimal mul = BigDecimal.valueOf(1);
 
         for (double number : numbers)
-            mul *= number;
+            mul = mul.multiply(BigDecimal.valueOf(number));
 
-        return mul;
+
+        if(mul.doubleValue() > Double.MAX_VALUE)
+            throw new IllegalArgumentException("Multiplication:: Multiplication not possible using Double");
+
+        return mul.doubleValue();
     }
 
     public double[] squareRootOfNumbers(double... numbers) {
