@@ -1,6 +1,8 @@
 package main.java;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+
+import static java.lang.Math.sqrt;
 import static java.lang.Math.toIntExact;
 
 public class Calculator {
@@ -66,13 +68,13 @@ public class Calculator {
              throw new IllegalArgumentException("Square Root:: Square root not possi");
 
         if(number > Double.MAX_VALUE) {
-            BigDecimal squareRoot  = BigDecimal.valueOf(Math.sqrt(number));
+            BigDecimal squareRoot  = BigDecimal.valueOf(sqrt(number));
 
             System.out.println(squareRoot);
             return squareRoot.doubleValue();
         }
 
-        return Math.sqrt(number);
+        return sqrt(number);
     }
 
     public double powerToAnExponent(double number, int exponent) {
@@ -95,7 +97,17 @@ public class Calculator {
         return sum/(numbers.length+1);
     }
 
-    public double findMedianOfNumber(double... numbers) {
+    public double findMedianOfNumbers(double... numbers) {
+        return 0;
+    }
+
+    public double findModeOfNumbers(double... numbers) {
+        return 0;
+    }
+
+    public double findHypotenuse(double side1, double side2, double side3) {
+
+        // side3 = Math.sqrt(side1+side2);
         return 0;
     }
 }

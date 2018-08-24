@@ -217,7 +217,7 @@ public class CalculatorTest {
     public void squareRootRangeOfDouble() {
         calculator = new Calculator();
 
-        double result = calculator.squareRootOfNumbers(Double.MIN_VALUE+Double.MAX_VALUE+Double.MAX_VALUE);
+        double result = calculator.squareRootOfNumbers(Double.MAX_VALUE+Double.MAX_VALUE+Double.MAX_VALUE);
         assertEquals(1, result,1);
     }
 
