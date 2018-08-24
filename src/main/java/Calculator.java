@@ -1,12 +1,6 @@
 package main.java;
-
-import sun.reflect.annotation.ExceptionProxy;
-
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-
-import static java.lang.Math.sqrt;
 import static java.lang.Math.toIntExact;
 
 public class Calculator {
@@ -60,7 +54,6 @@ public class Calculator {
         for (double number : numbers)
             mul = mul.multiply(BigDecimal.valueOf(number));
 
-
         if(mul.doubleValue() > Double.MAX_VALUE)
             throw new IllegalArgumentException("Multiplication:: Multiplication not possible using Double");
 
@@ -69,8 +62,17 @@ public class Calculator {
 
     public double squareRootOfNumbers(double number) {
 
+        if(number == 0)
+             throw new IllegalArgumentException("Square Root:: Square root not possi");
 
-        return 0;
+        if(number > Double.MAX_VALUE) {
+            BigDecimal squareRoot  = BigDecimal.valueOf(Math.sqrt(number));
+
+            System.out.println(squareRoot);
+            return squareRoot.doubleValue();
+        }
+
+        return Math.sqrt(number);
     }
 
     public double powerToAnExponent(double number, int exponent) {

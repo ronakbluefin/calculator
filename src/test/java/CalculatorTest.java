@@ -3,8 +3,6 @@ package test.java;
 import main.java.Calculator;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -200,18 +198,17 @@ public class CalculatorTest {
     @Test
     public void squareRootOfNumbers() {
         calculator = new Calculator();
-
-        double[] result = calculator.squareRootOfNumbers(16);
-        assertEquals(4, result);
+        double result = calculator.squareRootOfNumbers(16);
+        assertEquals(4, result, 0);
     }
 
     @Test
-    public void squareRootOfZero() {
+    public void squareRootRangeOfDoubleException() {
         calculator = new Calculator();
 
         try {
-            calculator.squareRootOfNumbers(100,0,2,3,0);
-        } catch (IllegalArgumentException e) {
+            calculator.multiplication(Double.MIN_VALUE+Double.MAX_VALUE+Double.MAX_VALUE);
+        } catch (NumberFormatException e) {
             assertTrue(true);
         }
     }
@@ -220,11 +217,8 @@ public class CalculatorTest {
     public void squareRootRangeOfDouble() {
         calculator = new Calculator();
 
-        try {
-            calculator.multiplication(Double.MIN_VALUE);
-        } catch (ArithmeticException e) {
-            assertTrue(true);
-        }
+        double result = calculator.squareRootOfNumbers(Double.MIN_VALUE+Double.MAX_VALUE+Double.MAX_VALUE);
+        assertEquals(1, result,1);
     }
 
     @Test
