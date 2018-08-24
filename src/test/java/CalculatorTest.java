@@ -116,7 +116,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void divisionByZero() {
+     public void divisionByZero() {
         calculator = new Calculator();
 
         try {
@@ -149,6 +149,13 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void divisionByMinValue() {
+        calculator = new Calculator();
+
+        double result = calculator.division(Double.MIN_VALUE,2);
+        assertEquals((Double.MIN_VALUE/2), result, 1);
+    }
 
     @Test
     public void multiplicationOfNumbers() {

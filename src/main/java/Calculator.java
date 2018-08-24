@@ -38,12 +38,12 @@ public class Calculator {
         if(numbers.length <=0)
             throw new NullPointerException("Division:: Values can not be Empty");
 
-        double div = numbers[0]*numbers[0];
+        BigDecimal div = BigDecimal.valueOf(numbers[0]*numbers[0]);
 
         for(double number : numbers)
-            div/= number;
+            div = div.divide(BigDecimal.valueOf(number));
 
-        return div;
+        return div.doubleValue();
     }
 
     public double multiplication(double... numbers) {
