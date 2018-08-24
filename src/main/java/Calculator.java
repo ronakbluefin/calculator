@@ -81,7 +81,6 @@ public class Calculator {
     }
 
     public double findMeanOfNumbers(double... numbers) {
-
         if(numbers.length <=0)
             throw new NullPointerException("Mean of Numbers:: Values can not be Empty");
 

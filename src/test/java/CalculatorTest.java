@@ -44,6 +44,22 @@ public class CalculatorTest {
     }
 
     @Test
+    public void additioWithMaxValues() {
+        calculator = new Calculator();
+
+        int result = calculator.addition(Integer.MAX_VALUE, Integer.MAX_VALUE);
+        assertEquals((Integer.MAX_VALUE + Integer.MAX_VALUE), result);
+    }
+
+    @Test
+    public void additionWithFloatValues() {
+        calculator = new Calculator();
+
+        int result = calculator.addition(Integer.MAX_VALUE/2, 123/12, 98);
+        assertEquals((Integer.MAX_VALUE/2) + (123/12) + 98, result);
+    }
+
+    @Test
     public void subtractionWithDoubles() {
         calculator = new Calculator();
 
