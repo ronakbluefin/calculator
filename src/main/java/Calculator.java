@@ -111,8 +111,8 @@ public class Calculator {
             throw new NullPointerException("Median:: numbers can not be empty");
     }
 
-    public double findModeOfNumbers(double... numbers) {
-        return 0;
+    public double[] findModeOfNumbers(double... numbers) {
+        return null;
     }
 
     public double findHypotenuse(double side1, double side2, double side3) {
