@@ -1,4 +1,4 @@
-//import org.junit.Test;
+import main.java.Calculator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -20,10 +20,27 @@ public class CalculatorMockitoTest {
     @Mock
     private BiFunction<Integer, Integer, Integer> functionTwo;
 
+    private Calculator calculator = new Calculator();
+
+    @Test
+    public void bothfunctionTestSimple() {
+        when(functionOne.apply(2, 3)).thenReturn(5);
+        when(functionTwo.apply(2, 3)).thenReturn(5);
+
+        Integer result = calculator.addTwoFunction(functionOne.apply(2,3), functionTwo.apply(2,3));
+        assertEquals(10, result, 1);
+    }
+
     @Test
     public void functionOneTestSimple() {
-        when(functionOne.apply(any(), any())).thenReturn(5);
-        System.out.println(functionOne.apply(1, 2));
+        when(functionOne.apply(10, 4)).thenReturn(14);
+        assertEquals(14, functionOne.apply(10,4), 1);
+    }
+
+    @Test
+    public void functionTwoTestSimple() {
+        when(functionTwo.apply(10, 4)).thenReturn(14);
+        assertEquals(14, functionTwo.apply(10,4), 1);
     }
 
     @Test
@@ -32,12 +49,6 @@ public class CalculatorMockitoTest {
         assertEquals(functionOne.apply(2,3), 5, 1);
 
         verify(functionOne).apply(2, 3);
-    }
-
-    @Test
-    public void functionTwoTestSimple() {
-        when(functionTwo.apply(any(), any())).thenReturn(5);
-        System.out.println(functionTwo.apply(1, 2));
     }
 
     @Test

@@ -84,12 +84,12 @@ public class Calculator {
         if(numbers.length <=0)
             throw new NullPointerException("Mean of Numbers:: Values can not be Empty");
 
-        double sum = 0;
+        BigDecimal sum  = new BigDecimal(0);
 
         for(double number : numbers)
-            sum += number;
+            sum = sum.add(BigDecimal.valueOf(number));
 
-        return sum/(numbers.length+1);
+        return sum.doubleValue()/(numbers.length+1);
     }
 
     public double findMedianOfNumbers(double... numbers) {
@@ -138,4 +138,8 @@ public class Calculator {
 
     public BiFunction<Integer, Integer, Integer> functionOne = (x,y) -> x+y;
     public BiFunction<Integer, Integer, Integer> functionTwo = (x,y) -> x+y;
+
+    public Integer addTwoFunction(Integer functionOne, Integer functionTwo) {
+        return functionOne + functionTwo;
+    }
 }
