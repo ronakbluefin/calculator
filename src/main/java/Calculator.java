@@ -136,19 +136,6 @@ public class Calculator {
         return hypotenuse.doubleValue();
     }
 
-    public int bifunctionAddition(int numberOne, int numberTwo) {
-
-        BiFunction<Integer, Integer, Integer> functionOne = (x,y) -> x+y;
-
-        BiFunction<Integer, Integer, Integer> functionTwo = (x,y) -> x+y;
-
-        BigInteger additionOfNumbers = new BigInteger(
-                String.valueOf(
-                        functionOne.apply(numberOne, numberTwo)
-                                + functionTwo.apply(numberOne,numberTwo)
-                )
-        );
-
-        return toIntExact(additionOfNumbers.intValue());
-    }
+    public BiFunction<Integer, Integer, Integer> functionOne = (x,y) -> x+y;
+    public BiFunction<Integer, Integer, Integer> functionTwo = (x,y) -> x+y;
 }

@@ -1,21 +1,20 @@
-import org.junit.Before;
+import main.java.Calculator;
 import org.junit.Test;
+import org.mockito.Mock;
+
+import java.util.function.BiFunction;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
 
 
 public class CalculatorMockitoTest {
 
-    private main.java.Calculator calculator;
-
-    @Before
-    public void setup() {
-        calculator = new main.java.Calculator();
-    }
+    @Mock
+    Calculator calculator;
 
     @Test
-    public void bifunctionAddition() {
-        int result = calculator.bifunctionAddition(10,20);
-        assertEquals(60, result);
+    public void functionOneTestSimple() {
+        when(calculator.functionOne(10,20)).thenReturn(30);
     }
 }
