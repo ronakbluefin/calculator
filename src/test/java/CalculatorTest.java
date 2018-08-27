@@ -267,20 +267,12 @@ public class CalculatorTest {
 
     @Test
     public void findModeFromNumbers() {
-        double[] result = calculator.findModeOfNumbers(10,20,7,2,7,5,5,3,5,1);
-        double[] expected = {5};
-        assertTrue(expected.equals(result));
+        double result = calculator.findModeOfNumbers(10,20,7,2,7,5,5,3,5,1);
+        assertEquals(5, result,0);
     }
 
     @Test
-    public void findModeFromSameOccurrenceNumbers() {
-        double[] result = calculator.findModeOfNumbers(1,1,1,2,2,2,3,3,3,3,4,4,4,4);
-        double[] expected = {3, 4};
-        assertTrue(expected.equals(result));
-    }
-
-    @Test
-    public void findModeFromNullValues() {
+    public void findModeNullPointerException() {
         try {
             calculator.findModeOfNumbers();
         } catch (NullPointerException e) {
@@ -288,4 +280,9 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void findModeFromUnEvenValues() {
+        double result = calculator.findModeOfNumbers(10.1,10.1,20,40,60,85,99.6540);
+        assertEquals(10.1, result,0);
+    }
 }

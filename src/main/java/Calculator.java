@@ -1,6 +1,7 @@
 package main.java;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Arrays;
 
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toIntExact;
@@ -94,6 +95,7 @@ public class Calculator {
         if(numbers.length > 0) {
             BigDecimal median = null;
 
+            Arrays.sort(numbers);
             if(numbers.length %2 == 0) {
                 int rangeGap = (numbers.length / 2) - 1;
                 double numberOne = numbers[rangeGap];
@@ -102,7 +104,6 @@ public class Calculator {
                 median = new BigDecimal((numberOne + numberTwo) / 2);
             } else {
                 int indexNumber = (numbers.length / 2);
-
                 median = new BigDecimal(numbers[indexNumber]);
             }
 
@@ -111,8 +112,21 @@ public class Calculator {
             throw new NullPointerException("Median:: numbers can not be empty");
     }
 
-    public double[] findModeOfNumbers(double... numbers) {
-        return null;
+    public double findModeOfNumbers(double... numbers) {
+        double maxValue = 0, maxCount = 0;
+
+        for (int i = 0; i < numbers.length; ++i) {
+            int count = 0;
+            for (int j = 0; j < numbers.length; ++j) {
+                if (numbers[j] == numbers[i]) ++count;
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                maxValue = numbers[i];
+            }
+        }
+
+        return maxValue;
     }
 
     public double findHypotenuse(double side1, double side2, double side3) {
