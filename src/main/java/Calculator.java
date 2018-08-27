@@ -2,6 +2,7 @@ package main.java;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.function.BiFunction;
 
 import static java.lang.Math.sqrt;
 import static java.lang.Math.toIntExact;
@@ -133,5 +134,21 @@ public class Calculator {
 
         BigDecimal hypotenuse = new BigDecimal(Math.sqrt((legOne * legOne) + (legTwo * legTwo)));
         return hypotenuse.doubleValue();
+    }
+
+    public int bifunctionAddition(int numberOne, int numberTwo) {
+
+        BiFunction<Integer, Integer, Integer> functionOne = (x,y) -> x+y;
+
+        BiFunction<Integer, Integer, Integer> functionTwo = (x,y) -> x+y;
+
+        BigInteger additionOfNumbers = new BigInteger(
+                String.valueOf(
+                        functionOne.apply(numberOne, numberTwo)
+                                + functionTwo.apply(numberOne,numberTwo)
+                )
+        );
+
+        return toIntExact(additionOfNumbers.intValue());
     }
 }
