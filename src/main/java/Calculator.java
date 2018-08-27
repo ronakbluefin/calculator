@@ -56,25 +56,22 @@ public class Calculator {
         for (double number : numbers)
             mul = mul.multiply(BigDecimal.valueOf(number));
 
-        if(mul.doubleValue() > Double.MAX_VALUE)
-            throw new IllegalArgumentException("Multiplication:: Multiplication not possible using Double");
-
         return mul.doubleValue();
     }
 
     public double squareRootOfNumbers(double number) {
 
         if(number == 0)
-             throw new IllegalArgumentException("Square Root:: Square root not possi");
+             throw new IllegalArgumentException("Square Root:: Square root not possible");
 
-        if(number > Double.MAX_VALUE) {
-            BigDecimal squareRoot  = BigDecimal.valueOf(sqrt(number));
+        BigDecimal squareRoot;
 
-            System.out.println(squareRoot);
-            return squareRoot.doubleValue();
+        try {
+            squareRoot  = new BigDecimal(sqrt(number));
+        } catch (Exception e) {
+            throw new NumberFormatException("Answer is Infinity");
         }
-
-        return sqrt(number);
+        return squareRoot.doubleValue();
     }
 
     public double powerToAnExponent(double number, int exponent) {
