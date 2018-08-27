@@ -64,13 +64,7 @@ public class Calculator {
         if(number == 0)
              throw new IllegalArgumentException("Square Root:: Square root not possible");
 
-        BigDecimal squareRoot;
-
-        try {
-            squareRoot  = new BigDecimal(sqrt(number));
-        } catch (Exception e) {
-            throw new NumberFormatException("Answer is Infinity");
-        }
+        BigDecimal squareRoot  = new BigDecimal(sqrt(number));
         return squareRoot.doubleValue();
     }
 
@@ -79,7 +73,9 @@ public class Calculator {
         if(number == 0)
             throw new NullPointerException("Power of Number:: Value can not be Empty");
 
-        return Math.pow(number, exponent);
+        BigDecimal powerToExpo = new BigDecimal(Math.pow(number, exponent));
+
+        return powerToExpo.doubleValue();
     }
 
     public double findMeanOfNumbers(double... numbers) {
@@ -95,6 +91,25 @@ public class Calculator {
     }
 
     public double findMedianOfNumbers(double... numbers) {
+        if(numbers.length > 0) {
+            BigDecimal median = null;
+
+            if(numbers.length %2 == 0) {
+                int rangeGap = (numbers.length / 2) - 1;
+
+                double numberOne = numbers[rangeGap];
+                double numberTwo = numbers[rangeGap+1];
+
+                median = new BigDecimal((numberOne + numberTwo) / 2);
+            } else {
+                int indexNumber = (numbers.length / 2);
+
+                median = new BigDecimal(numbers[indexNumber]);
+            }
+
+            return median.doubleValue();
+        }
+
         return 0;
     }
 

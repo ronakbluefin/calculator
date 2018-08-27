@@ -206,7 +206,7 @@ public class CalculatorTest {
     public void powerToAnExponentRangeOfDouble() {
         try {
             calculator.powerToAnExponent(Double.MAX_VALUE, 2);
-        } catch (ArithmeticException e) {
+        } catch (NumberFormatException e) {
             assertTrue(true);
         }
     }
@@ -236,9 +236,15 @@ public class CalculatorTest {
     }
 
     @Test
-    public void findMedianOfNumbers() {
+    public void findMedianWithTotalEvenNumber() {
         double result = calculator.findMedianOfNumbers(10,20,30,40,50,60,70,80,90,100);
-        assertEquals(55, result, 4);
+        assertEquals(55, result, 0);
+    }
+
+    @Test
+    public void findMedianWithTotalEOddNumber() {
+        double result = calculator.findMedianOfNumbers(10,20,30,40,50,60,70,80,90);
+        assertEquals(50, result, 4);
     }
 
     @Test
