@@ -6,6 +6,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.function.BiFunction;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -27,12 +28,23 @@ public class CalculatorMockitoTest {
 
     @Test
     public void functionOneVerify() {
-        verify(functionOne.apply(any(), any()).toString());
+        when(functionOne.apply(any(), any())).thenReturn(5);
+        assertEquals(functionOne.apply(2,3), 5, 1);
+
+        verify(functionOne).apply(2, 3);
     }
 
     @Test
-    public void functionTwiTestSimple() {
+    public void functionTwoTestSimple() {
         when(functionTwo.apply(any(), any())).thenReturn(5);
         System.out.println(functionTwo.apply(1, 2));
+    }
+
+    @Test
+    public void functionTwoVerify() {
+        when(functionTwo.apply(any(), any())).thenReturn(5);
+        assertEquals(functionTwo.apply(2,3), 5, 1);
+
+        verify(functionTwo).apply(2, 3);
     }
 }
