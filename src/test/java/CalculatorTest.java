@@ -255,4 +255,15 @@ public class CalculatorTest {
             assertTrue(true);
         }
     }
+
+    @Test
+    public void findMedianWithNullValues() {
+        try {
+            calculator.findMedianOfNumbers();
+        } catch (NullPointerException e) {
+            assertTrue(true);
+        }
+    }
+
+    
 }

@@ -96,7 +96,6 @@ public class Calculator {
 
             if(numbers.length %2 == 0) {
                 int rangeGap = (numbers.length / 2) - 1;
-
                 double numberOne = numbers[rangeGap];
                 double numberTwo = numbers[rangeGap+1];
 
@@ -108,9 +107,8 @@ public class Calculator {
             }
 
             return median.doubleValue();
-        }
-
-        return 0;
+        } else
+            throw new NullPointerException("Median:: numbers can not be empty");
     }
 
     public double findModeOfNumbers(double... numbers) {
