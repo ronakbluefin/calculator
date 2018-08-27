@@ -130,8 +130,8 @@ public class Calculator {
     }
 
     public double findHypotenuse(double legOne, double legTwo) {
-        //
-        // side3 = Math.sqrt(side1+side2);
-        return 0;
+
+        BigDecimal hypotenuse = new BigDecimal(Math.sqrt((legOne * legOne) + (legTwo * legTwo)));
+        return hypotenuse.doubleValue();
     }
 }

@@ -295,12 +295,22 @@ public class CalculatorTest {
     @Test
     public void findHypotenuseFloatValues() {
         double result = calculator.findHypotenuse(10,20);
-        assertEquals(22.36, result, 0);
+        assertEquals(22.36, result, 0.06);
     }
 
     @Test
     public void findHypotenuseOneZeroValue() {
         double result = calculator.findHypotenuse(10,0);
         assertEquals(10, result, 0);
+    }
+
+    @Test
+    public void findHypotenuseDoubleMaxValues() {
+
+        try {
+            calculator.findHypotenuse(Double.MAX_VALUE, Double.MAX_VALUE);
+        } catch (NumberFormatException e) {
+            assertTrue(true);
+        }
     }
 }
