@@ -129,8 +129,8 @@ public class Calculator {
         return maxValue;
     }
 
-    public double findHypotenuse(double side1, double side2, double side3) {
-
+    public double findHypotenuse(double legOne, double legTwo) {
+        //
         // side3 = Math.sqrt(side1+side2);
         return 0;
     }

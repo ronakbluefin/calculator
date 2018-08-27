@@ -285,4 +285,22 @@ public class CalculatorTest {
         double result = calculator.findModeOfNumbers(10.1,10.1,20,40,60,85,99.6540);
         assertEquals(10.1, result,0);
     }
+
+    @Test
+    public void findhypotenuseSimple() {
+        double result = calculator.findHypotenuse(5 ,12);
+        assertEquals(13, result, 0);
+    }
+
+    @Test
+    public void findHypotenuseFloatValues() {
+        double result = calculator.findHypotenuse(10,20);
+        assertEquals(22.36, result, 0);
+    }
+
+    @Test
+    public void findHypotenuseOneZeroValue() {
+        double result = calculator.findHypotenuse(10,0);
+        assertEquals(10, result, 0);
+    }
 }
